@@ -2,6 +2,9 @@
 
 namespace QuickMart_Traders
 {
+    /// <summary>
+    /// This is entity class 
+    /// </summary>
     class SaleTransaction
     {
         public string InvoiceNo;
@@ -11,11 +14,14 @@ namespace QuickMart_Traders
         public decimal PurchaseAmount;
         public decimal SellingAmount;
 
-        public string ProfitOrLossStatus;
+        public string ProfitOrLossStatus; 
         public decimal ProfitOrLossAmount;
         public decimal ProfitMarginPercent;
     }
 
+    /// <summary>
+    /// This is TransactionService class
+    /// </summary>
     class TransactionService
     {
         public static SaleTransaction LastTransaction;
@@ -23,6 +29,7 @@ namespace QuickMart_Traders
 
         public static void CreateTransaction()
         {
+            /// creating object
             SaleTransaction t = new SaleTransaction();
 
             Console.Write("Enter Invoice No: ");
@@ -95,6 +102,9 @@ namespace QuickMart_Traders
             Console.WriteLine("------------------------------------------------------");
         }
 
+        /// <summary>
+        /// Method To Recalculate 
+        /// </summary>
         public static void Recalculate()
         {
             if (!HasLastTransaction)
@@ -109,6 +119,7 @@ namespace QuickMart_Traders
             PrintResult(LastTransaction);
             Console.WriteLine("------------------------------------------------------");
         }
+
 
         private static void Calculate(SaleTransaction t)
         {

@@ -2,6 +2,9 @@
 
 namespace MediSure_Clinic
 {
+    /// <summary>
+    /// This is entity class for PatientBill details
+    /// </summary>
     class PatientBill
     {
         public string BillId;
@@ -17,6 +20,9 @@ namespace MediSure_Clinic
         public decimal FinalPayable;
     }
 
+    /// <summary>
+    /// This is BillingService class
+    /// </summary>
     class BillingService
     {
         public static PatientBill LastBill;
@@ -24,6 +30,7 @@ namespace MediSure_Clinic
 
         public static void CreateNewBill()
         {
+            /// creating object of PatientBill class
             PatientBill bill = new PatientBill();
 
             Console.Write("Enter Bill Id: ");
@@ -46,6 +53,7 @@ namespace MediSure_Clinic
             else
                 bill.HasInsurance = false;
 
+            /// Validating Fee and Charges
             Console.Write("Enter Consultation Fee: ");
             if (!decimal.TryParse(Console.ReadLine(), out bill.ConsultationFee) || bill.ConsultationFee <= 0)
             {
@@ -117,6 +125,9 @@ namespace MediSure_Clinic
 
     class Program
     {
+        /// <summary>
+        /// This is Main method or entry point
+        /// </summary>
         static void Main()
         {
             bool running = true;
@@ -132,6 +143,7 @@ namespace MediSure_Clinic
 
                 string choice = Console.ReadLine();
 
+                /// switch case
                 switch (choice)
                 {
                     case "1":
