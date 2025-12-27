@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../QuickMart_Traders/QuickMart_Traders.csproj" />
+  <Project Path="MediSure_Clinic.csproj" />
+</Solution>
